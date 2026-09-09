@@ -1,0 +1,3 @@
+relationship,left_split,left_essay_id,left_score,right_split,right_essay_id,right_score,left_word_count,right_word_count,shingle_jaccard,word_sequence_ratio,confirmed_near_duplicate,conflicting_train_scores
+within_train,train,e9be80d,3,train,0c8039c,2.0,310,310,0.9678456591639871,0.9967741935483871,True,True
+cross_split,train,a423c92,3,test,6017fea,,263,263,0.9230769230769231,0.9923954372623575,True,False

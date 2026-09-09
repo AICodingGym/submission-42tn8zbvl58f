@@ -1,0 +1,72 @@
+{
+  "artifacts": {
+    "fold_assignment_sha256": "7d9e02377a9e992b38048d10b7d5cd636740466f483158fbc15655d321bb3ef4",
+    "oof_sha256": "fe6c67ee379c7bb37bd3594d164c89dcf60b1d701886880f638f7ccd0c5cefe9",
+    "submission_sha256": "d74c9357c883ebff1a8af33e2b0c1851b21a75946e94fb6ed308f2266eeb7688",
+    "test_predictions_sha256": "f01fcfa4cc0481482f738e7aa4e9657ebd3f3f10c5ce691f612ca0242d6b8119"
+  },
+  "config": {
+    "char_analyzer": "char_wb",
+    "char_max_features": 120000,
+    "char_min_df": 3,
+    "char_ngram_max": 5,
+    "char_ngram_min": 3,
+    "lowercase": true,
+    "max_df": 0.995,
+    "norm": "l2",
+    "ridge_alphas": [
+      0.3,
+      1.0,
+      3.0
+    ],
+    "ridge_max_iterations": 5000,
+    "ridge_solver": "lsqr",
+    "ridge_tolerance": 0.0001,
+    "strip_accents": null,
+    "sublinear_tf": true,
+    "word_analyzer": "word",
+    "word_max_features": 100000,
+    "word_min_df": 2,
+    "word_ngram_max": 2,
+    "word_ngram_min": 1
+  },
+  "fixed_thresholds": [
+    1.5,
+    2.5,
+    3.5,
+    4.5,
+    5.5
+  ],
+  "model": "word_char_tfidf_ridge",
+  "n_splits": 5,
+  "random_seed": 42,
+  "runtime_seconds": 96.45238241700281,
+  "selected_alpha": 1.0,
+  "selected_oof_metrics": {
+    "fold_qwk_mean": 0.7583991005196951,
+    "fold_qwk_std": 0.008329023632038269,
+    "mae_raw": 0.48385931080963956,
+    "prediction_max": 6.054226875305176,
+    "prediction_mean": 2.972952137541927,
+    "prediction_min": 0.4434181749820709,
+    "prediction_std": 0.8436104620105026,
+    "qwk_fixed": 0.758454051872653,
+    "rmse_raw": 0.6124413166278482,
+    "severe_error_count": 246
+  },
+  "selection_rule": "highest concatenated OOF fixed-threshold QWK; RMSE breaks ties",
+  "submission_score_counts": {
+    "1": 53,
+    "2": 476,
+    "3": 749,
+    "4": 386,
+    "5": 63,
+    "6": 4
+  },
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scikit_learn": "1.9.0",
+    "scipy": "1.18.1"
+  }
+}

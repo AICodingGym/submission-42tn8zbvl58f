@@ -1,0 +1,55 @@
+{
+  "assignment_rows": 15576,
+  "assignment_sha256": "7d9e02377a9e992b38048d10b7d5cd636740466f483158fbc15655d321bb3ef4",
+  "balance_audit": {
+    "every_fold_contains_every_score": true,
+    "fold_count_spread_by_score": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 0
+    },
+    "fold_sizes": {
+      "0": 3116,
+      "1": 3115,
+      "2": 3115,
+      "3": 3115,
+      "4": 3115
+    },
+    "maximum_absolute_score_rate_deviation": 0.00025218861630973977,
+    "maximum_fold_count_spread_by_score": 1
+  },
+  "eda_summary_sha256": "1ddca75d3dcfafcda8856cd053b5e64bd507c228afe1c88dd6046a2a9582cbc2",
+  "group_audit": {
+    "essays_in_multi_essay_groups": 2,
+    "group_count": 15575,
+    "groups_crossing_folds": 0,
+    "groups_with_conflicting_scores": 1,
+    "largest_group_size": 2,
+    "multi_essay_group_count": 1
+  },
+  "immutable_mapping_check": "passed",
+  "metric_smoke_tests": {
+    "constant_qwk": 0.0,
+    "near_qwk": 0.9259259259259259,
+    "perfect_qwk": 1.0,
+    "reverse_qwk": -1.0000000000000004,
+    "strict_threshold_probe": [
+      1,
+      2,
+      2,
+      5,
+      6
+    ]
+  },
+  "n_splits": 5,
+  "near_duplicate_candidates_sha256": "7bb238cbe41cdc68996cf703c588849506dac2b05431a8a2e92de5e508bf7ba3",
+  "normalization": "Unicode NFKC + casefold + whitespace collapse",
+  "random_seed": 42,
+  "scikit_learn_version": "1.9.0",
+  "shuffle": true,
+  "splitter": "StratifiedGroupKFold",
+  "train_sha256": "ce6b0bd2c7d790a64ad3d2a8e15e3563d90e881c787638caa93504445caa65d0"
+}

@@ -48,3 +48,6 @@ outputs/
 artifacts/
 models/
 *.log
+
+# local plotting and tool caches
+.cache/
