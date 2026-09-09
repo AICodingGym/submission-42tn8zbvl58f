@@ -81,6 +81,20 @@ averaged test predictions to `artifacts/oof/tfidf_ridge_test.csv`, a detailed
 report to `reports/tfidf_baseline_report.md`, and the fixed-threshold submission
 to `submissions/tfidf_ridge_fixed.csv`.
 
+## Blend explicit essay-style features
+
+After the TF-IDF baseline exists, train a fold-local gradient-boosting model on
+length and style features, blend its continuous predictions with TF-IDF, and
+calibrate five ordered score thresholds with:
+
+```bash
+../.venv/bin/python -m src.train_tfidf_style_blend
+```
+
+This writes its audit artifacts under `artifacts/oof/`, a validation report to
+`reports/tfidf_style_blend_report.md`, and the calibrated submission to
+`submissions/tfidf_style_blend_calibrated.csv`.
+
 ## Planned workflow
 
 1. Explore distributions, text lengths, and class imbalance.

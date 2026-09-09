@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "oof_sha256": "df0c10893bae13219a07afcd193c87371a6b1ff3e32d708a2aaf0c998513335f",
+    "source_tfidf_oof_sha256": "fe6c67ee379c7bb37bd3594d164c89dcf60b1d701886880f638f7ccd0c5cefe9",
+    "source_tfidf_test_sha256": "f01fcfa4cc0481482f738e7aa4e9657ebd3f3f10c5ce691f612ca0242d6b8119",
+    "submission_sha256": "c51cf27a3aafbc07e6ac5ee2654c6d946c0aeda3b729bc149de9ef42f6d47d5a",
+    "test_predictions_sha256": "bbf23916914c0995603bd7b39c5282339d88adf5030b343acc06060d112f8f82"
+  },
+  "config": {
+    "l2_regularization": 2.0,
+    "learning_rate": 0.05,
+    "max_iterations": 200,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 30,
+    "style_weight": 0.35,
+    "tfidf_alpha_column": "pred_raw_alpha_3",
+    "tfidf_weight": 0.65,
+    "threshold_max_iterations": 100,
+    "threshold_min_gap": 0.025,
+    "threshold_population_size": 10
+  },
+  "model": "tfidf_ridge_style_hist_gradient_boosting_blend",
+  "production_threshold_rule": "column-wise median of five complementary-fold fits",
+  "production_thresholds": [
+    1.9050094145878114,
+    2.642963302795047,
+    3.325066299375084,
+    4.092550412058884,
+    4.675041210440747
+  ],
+  "runtime_seconds": 73.61467108299257,
+  "style_features": [
+    "char_count",
+    "word_count",
+    "sentence_count",
+    "paragraph_count",
+    "avg_word_length",
+    "avg_sentence_words",
+    "unique_word_ratio",
+    "long_word_ratio",
+    "punctuation_per_1k_chars",
+    "uppercase_ratio",
+    "digit_ratio",
+    "connector_per_1k_words"
+  ],
+  "submission_score_counts": {
+    "1": 125,
+    "2": 532,
+    "3": 549,
+    "4": 394,
+    "5": 111,
+    "6": 20
+  },
+  "validation": {
+    "baseline_tfidf_alpha3_fixed_qwk": 0.748948282461678,
+    "blend_cross_fitted_threshold_qwk": 0.8018873541143376,
+    "blend_fixed_qwk": 0.7591101674382164,
+    "blend_production_threshold_qwk": 0.8044853028036246,
+    "blend_raw_rmse": 0.5896888280759666,
+    "style_only_fixed_qwk": 0.7130738793690592
+  },
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scikit_learn": "1.9.0",
+    "scipy": "1.18.1"
+  }
+}
