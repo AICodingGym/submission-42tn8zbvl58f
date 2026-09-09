@@ -95,13 +95,43 @@ This writes its audit artifacts under `artifacts/oof/`, a validation report to
 `reports/tfidf_style_blend_report.md`, and the calibrated submission to
 `submissions/tfidf_style_blend_calibrated.csv`.
 
+## Train the three-way classical ensemble
+
+Add complementary raw-character and ordinal word models to the established
+TF-IDF/style pipeline with:
+
+```bash
+../.venv/bin/python -m src.train_classical_ensemble
+```
+
+The command refits every component from raw data and the fixed folds, performs
+complementary-fold threshold calibration, and writes the checked candidate to
+`submissions/classical_three_way_calibrated.csv`.
+
+## Train the ordinal DeBERTa candidate
+
+On Apple Silicon, run a complete fold with mixed-precision MPS training and a
+384-token 75/25 beginning/conclusion view:
+
+```bash
+HF_HUB_DISABLE_XET=1 ../.venv/bin/python -m src.train_deberta_ordinal \
+  --fold 0 --epochs 1 --max-length 384 --tail-fraction 0.25 \
+  --train-batch-size 8 --gradient-accumulation-steps 2 \
+  --eval-batch-size 32 --device mps --predict-test
+```
+
+Each collision-resistant run directory under `artifacts/deberta/` contains raw
+validation predictions, optional raw test predictions, and a configuration and
+integrity summary. Full multi-epoch runs select the best epoch by validation
+QWK with RMSE as the tie-breaker.
+
 ## Planned workflow
 
 1. Explore distributions, text lengths, and class imbalance.
 2. Establish five-fold stratified validation with the official QWK metric.
 3. Train a word-and-character TF-IDF regression baseline.
 4. Calibrate five ordered score thresholds using out-of-fold predictions.
-5. Add statistical features and, if useful, a Transformer model.
+5. Add complementary classical signals and an ordinal Transformer candidate.
 6. Validate the final CSV against `sample_submission.csv` and submit it through
    the AI Coding Gym CLI.
 
